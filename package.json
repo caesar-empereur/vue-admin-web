@@ -4,7 +4,6 @@
   "description": "123",
   "author": "yingyang <393050600@qq.com>",
   "private": true,
-
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
@@ -12,7 +11,6 @@
     "build:dev": "cross-env NODE_ENV=development env_config=dev node build/build.js",
     "build:test": "cross-env NODE_ENV=testing env_config=test node build/build.js"
   },
-
   "dependencies": {
     "axios": "^0.19.2",
     "cross-env": "^7.0.2",
