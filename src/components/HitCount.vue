@@ -98,7 +98,7 @@
                 myChart.setOption(option, true);
             },
             initWebSocket(){
-                const wsuri = "wss://constantinopolis.top/wss";
+                const wsuri = "wss://47.113.188.83:9090/wss";
                 this.websock = new WebSocket(wsuri);
                 this.websock.onmessage = this.onMessage;
                 this.websock.onopen = this.onOpen;
