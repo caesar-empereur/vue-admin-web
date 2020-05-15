@@ -127,19 +127,19 @@ export default {
                     title: '运行管理',
                     subs: [
                         {
-                            index: '/monitor-mysql',
-                            title: 'mysql 监控'
-                        },
-                        {
-                            index: '/monitor-redis',
-                            title: 'redis 监控'
+                            index: '/hit-count',
+                            title: '网页点击实时监控'
                         }
+//                        {
+//                            index: '/monitor-redis',
+//                            title: 'redis 监控'
+//                        }
                     ]
                 },
                 {
                     icon: 'el-icon-cpu',
                     index: '3',
-                    title: '在线分析',
+                    title: '统计分析',
                     subs: [
                         {
                             index: '/analysis-sku',
@@ -151,11 +151,11 @@ export default {
                         },
                         {
                             index: '/analysis-echart1',
-                            title: '依赖图'
+                            title: '用户习惯分析'
                         },
                         {
                             index: '/analysis-echart2',
-                            title: '柱状图'
+                            title: '年度利润分析'
                         }
                     ]
                 }

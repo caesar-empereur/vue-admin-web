@@ -21,30 +21,20 @@
                 timer: '',
                 xAxisTime: [],
 
-                queryTimeData:[],
-                dealTimeData:[],
-                resTimeData:[],
+                indexCountData:[],
+                sellCountData:[],
+                secCountData:[],
 
                 websock: null
             }
         },
         mounted() {
             this.initWebSocket();
-
-            for (var i=0;i<20;i++){
-                this.xAxisTime.push('2020-04-'+i);
-                this.queryTimeData.push(this.randomInteger());
-                this.dealTimeData.push(this.randomInteger());
-                this.resTimeData.push(this.randomInteger());
-            }
         },
         beforeDestroy() {
             this.websock.close()
         },
         methods: {
-            randomInteger() {
-                return Math.floor(Math.random() * (500 - 400)) + 400;
-            },
             drawLine() {
 
                 let myChart = echarts.init(document.getElementById('line-box'),'light');
@@ -60,7 +50,7 @@
                         }
                     },
                     legend: {
-                        data: ['查询时间', '处理时间', '响应时间']
+                        data: ['首页访问量', '促销页面访问量', '秒杀页面访问量']
                     },
                     grid: {
                         left: '3%',
@@ -82,25 +72,25 @@
                     ],
                     series: [
                         {
-                            name: '查询时间',
+                            name: '首页访问量',
                             type: 'line',
                             stack: '总量',
                             areaStyle: {},
-                            data: this.queryTimeData
+                            data: this.indexCountData
                         },
                         {
-                            name: '处理时间',
+                            name: '促销页面访问量',
                             type: 'line',
                             stack: '总量',
                             areaStyle: {},
-                            data: this.dealTimeData
+                            data: this.sellCountData
                         },
                         {
-                            name: '响应时间',
+                            name: '秒杀页面访问量',
                             type: 'line',
                             stack: '总量',
                             areaStyle: {},
-                            data: this.resTimeData
+                            data: this.secCountData
                         }
                     ]
                 };
@@ -121,16 +111,27 @@
                 var data = JSON.parse(msg.data);
                 console.log(data);
 
-                this.queryTimeData.shift();
-                this.dealTimeData.shift();
-                this.resTimeData.shift();
 
-                this.queryTimeData.push(data.queryTime);
-                this.dealTimeData.push(data.dealTime);
-                this.resTimeData.push(data.resTime);
+                if (this.xAxisTime.length >= 15){
+                    this.indexCountData.shift();
+                    this.sellCountData.shift();
+                    this.secCountData.shift();
+                    this.xAxisTime.shift();
+                }
 
-                this.xAxisTime.shift();
-                this.xAxisTime.push(data.date);
+                this.indexCountData.push(data.indexCount);
+                this.sellCountData.push(data.sellCount);
+                this.secCountData.push(data.secCount);
+
+
+                var date = new Date(data.currTime);
+
+                var hour = date.getHours()<10?'0'+date.getHours():date.getHours();
+                var minute = date.getMinutes()<10?'0'+date.getMinutes():date.getMinutes();
+                var second = date.getSeconds()<10?'0'+date.getSeconds():date.getSeconds();
+
+
+                this.xAxisTime.push(hour + ':'+minute + ':'+second);
 
                 this.drawLine();
             }

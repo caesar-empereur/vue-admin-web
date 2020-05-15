@@ -31,9 +31,8 @@ export default new Router({
                   component: () => import('@/components/Sku')
               },
               {
-                  path: '/monitor-mysql',
-                  name: 'mysql 监控',
-                  component: () => import('@/components/Mysql')
+                  path: '/hit-count',
+                  component: () => import('@/components/HitCount')
               },
               // {
               //     path: '/monitor-redis',
