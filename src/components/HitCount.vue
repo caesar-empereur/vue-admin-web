@@ -13,6 +13,7 @@
     import echarts from 'echarts'
 
     const API_ROOT = process.env.API_ROOT;
+    const WS_ROOT = process.env.WS_ROOT;
 
     export default {
 
@@ -75,21 +76,21 @@
                             name: '首页访问量',
                             type: 'line',
                             stack: '总量',
-                            areaStyle: {},
+//                            areaStyle: {},
                             data: this.indexCountData
                         },
                         {
                             name: '促销页面访问量',
                             type: 'line',
                             stack: '总量',
-                            areaStyle: {},
+//                            areaStyle: {},
                             data: this.sellCountData
                         },
                         {
                             name: '秒杀页面访问量',
                             type: 'line',
                             stack: '总量',
-                            areaStyle: {},
+//                            areaStyle: {},
                             data: this.secCountData
                         }
                     ]
@@ -98,8 +99,7 @@
                 myChart.setOption(option, true);
             },
             initWebSocket(){
-                const wsuri = "wss://47.113.188.83:9090/wss";
-                this.websock = new WebSocket(wsuri);
+                this.websock = new WebSocket(WS_ROOT);
                 this.websock.onmessage = this.onMessage;
                 this.websock.onopen = this.onOpen;
             },
