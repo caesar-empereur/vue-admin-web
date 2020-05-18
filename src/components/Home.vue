@@ -130,10 +130,6 @@ export default {
                             index: '/hit-count',
                             title: '网页点击实时监控'
                         }
-//                        {
-//                            index: '/monitor-redis',
-//                            title: 'redis 监控'
-//                        }
                     ]
                 },
                 {

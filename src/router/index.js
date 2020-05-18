@@ -20,40 +20,43 @@ export default new Router({
           children: [
               {
                   path: '/dashboard',
-                  component: () => import('@/components/Dashboard')
+                  component: () => import('@/components/Dashboard'),
+                  meta: { title: '系统首页' }
               },
               {
                   path: '/order',
-                  component: () => import('@/components/Order')
+                  component: () => import('@/components/Order'),
+                  meta: { title: '订单管理' }
               },
               {
                   path: '/sku',
-                  component: () => import('@/components/Sku')
+                  component: () => import('@/components/Sku'),
+                  meta: { title: '商品管理' }
               },
               {
                   path: '/hit-count',
-                  component: () => import('@/components/HitCount')
+                  component: () => import('@/components/HitCount'),
+                  meta: { title: '网页点击实时监控' }
               },
-              // {
-              //     path: '/monitor-redis',
-              //     name: 'redis 监控',
-              //     component: () => import('@/components/Dashboard')
-              // },
               {
                   path: '/analysis-sku',
-                  component: () => import('@/components/SellChart')
+                  component: () => import('@/components/SellChart'),
+                  meta: { title: '商品销售分析' }
               },
               {
                   path: '/analysis-user',
-                  component: () => import('@/components/UserChart')
+                  component: () => import('@/components/UserChart'),
+                  meta: { title: '用户点击分析' }
               },
               {
                   path: '/analysis-echart1',
-                  component: () => import('@/components/Echart1')
+                  component: () => import('@/components/Echart1'),
+                  meta: { title: '用户习惯分析' }
               },
               {
                   path: '/analysis-echart2',
-                  component: () => import('@/components/Echart2')
+                  component: () => import('@/components/Echart2'),
+                  meta: { title: '年度利润分析' }
               }
           ]
       }

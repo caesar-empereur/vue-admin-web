@@ -11,6 +11,7 @@ Vue.use(ElementUI, {size: 'small'});
 const whiteList = ['/login']
 
 router.beforeEach((to, from, next) => {
+    document.title = `${to.meta.title}`;
     if (getToken()){
         if (to.path === '/login') {
             next('/login');
