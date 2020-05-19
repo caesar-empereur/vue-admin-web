@@ -12,6 +12,7 @@ export default new Router({
       {
           path: '/login',
           component: () => import('@/components/Login'),
+          meta: { title: '登陆' }
       },
       {
           path: '/',

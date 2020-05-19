@@ -4,18 +4,18 @@
             <div class="ms-title">后台管理系统</div>
             <el-form :model="param" :rules="rules" ref="login" label-width="0px" class="ms-content">
                 <el-form-item prop="username">
-                    <el-input v-model="param.username" placeholder="username">
-                        <el-button slot="prepend" icon="el-icon-lx-people"></el-button>
+                    <el-input v-model="param.username" placeholder="用户名">
+                        <el-button slot="prepend" icon="el-icon-user"></el-button>
                     </el-input>
                 </el-form-item>
                 <el-form-item prop="password">
                     <el-input
                         type="password"
-                        placeholder="password"
+                        placeholder="密码"
                         v-model="param.password"
                         @keyup.enter.native="submitForm()"
                     >
-                        <el-button slot="prepend" icon="el-icon-lx-lock"></el-button>
+                        <el-button slot="prepend" icon="el-icon-lock"></el-button>
                     </el-input>
                 </el-form-item>
                 <div class="login-btn">

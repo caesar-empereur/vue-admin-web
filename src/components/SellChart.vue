@@ -209,9 +209,9 @@
         background-color: rgb(240, 242, 245);
         .chart-wrapper {
             width: 100%;
-            height: 350px;
+            height: 380px;
             background: #fff;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
     }
 </style>

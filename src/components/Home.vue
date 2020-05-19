@@ -44,14 +44,12 @@
             </el-header>
 
             <el-container >
-                <el-aside width="11%" style="background:#324157;">
                     <el-menu
                         :router="true"
+                        :collapse="collapse"
                         :default-active="this.$route.path"
                         background-color="#324157"
                         text-color="#bfcbd9"
-                        active-text-color="#20a0ff"
-                        unique-opened
                         router>
                         <template v-for="item in routeList">
                             <template v-if="item.subs">
@@ -76,7 +74,6 @@
                             </template>
                         </template>
                     </el-menu>
-                </el-aside>
 
                 <el-container width="80%">
                     <el-main>
@@ -100,6 +97,8 @@ import { removeToken } from '../util/auth';
 export default {
     data() {
         return {
+            collapse: false,
+            browserWidth: '',
             routeList: [
                 {
                     icon: 'el-icon-s-home',
@@ -156,10 +155,26 @@ export default {
                     ]
                 }
             ],
-            collapse: false,
             fullscreen: false,
             name: 'linxin',
             message: 2
+        }
+    },
+    mounted() {
+        window.onresize =()  =>{
+             return (()=>{
+                   this.browserWidth = window.innerWidth;
+             })()
+        }
+    },
+    watch: {
+        browserWidth(val) {
+            console.log(val);
+            if (val<1000){
+                this.collapse=true;
+            } else {
+                this.collapse=false;
+            }
         }
     },
     computed: {
@@ -177,7 +192,6 @@ export default {
         },
         collapseChage() {
             this.collapse = !this.collapse;
-            bus.$emit('collapse', this.collapse);
         }
     }
 };
