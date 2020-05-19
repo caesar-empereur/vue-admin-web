@@ -44,7 +44,7 @@
             </el-header>
 
             <el-container >
-                <el-aside width="250px" style="background:#324157;">
+                <el-aside width="11%" style="background:#324157;">
                     <el-menu
                         :router="true"
                         :default-active="this.$route.path"
@@ -78,7 +78,7 @@
                     </el-menu>
                 </el-aside>
 
-                <el-container>
+                <el-container width="80%">
                     <el-main>
                         <transition name="main" mode="out-in">
                             <router-view></router-view>
@@ -128,7 +128,7 @@ export default {
                     subs: [
                         {
                             index: '/hit-count',
-                            title: '网页点击实时监控'
+                            title: '网页实时监控'
                         }
                     ]
                 },
@@ -138,7 +138,7 @@ export default {
                     title: '统计分析',
                     subs: [
                         {
-                            index: '/analysis-sku',
+                            index: '/analysis-sell',
                             title: '商品销售分析'
                         },
                         {

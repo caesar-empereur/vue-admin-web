@@ -36,10 +36,10 @@ export default new Router({
               {
                   path: '/hit-count',
                   component: () => import('@/components/HitCount'),
-                  meta: { title: '网页点击实时监控' }
+                  meta: { title: '网页实时监控' }
               },
               {
-                  path: '/analysis-sku',
+                  path: '/analysis-sell',
                   component: () => import('@/components/SellChart'),
                   meta: { title: '商品销售分析' }
               },
