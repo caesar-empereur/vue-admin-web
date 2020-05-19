@@ -13,7 +13,7 @@ yarn-error.log*
 *.njsproj
 *.sln
 
-test.env.js
+test.env.js*
 
 .gradle/
 out/
