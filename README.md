@@ -11,9 +11,8 @@
     1 安装依赖：根目录 npm install 
     2 本地运行：npm run dev
     3 本地打包：npm run build:dev
+    4 本地访问 https://vue-admin-web.top
 ```
-
-
 
 - nginx 的配置
     ```
