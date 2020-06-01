@@ -21,7 +21,7 @@ export default new Router({
           children: [
               {
                   path: '/dashboard',
-                  component: () => import('@/components/Dashboard'),
+                  component: () => import('@/components/DashboardNew'),
                   meta: { title: '系统首页' }
               },
               {

@@ -1,10 +1,5 @@
 <template>
     <div>
-        <!--<div class="container" style="height: 100%">-->
-            <!--<div id="line-box">-->
-            <!--</div>-->
-        <!--</div>-->
-
         <div class="container" align="center">
             <el-row :gutter="20">
 

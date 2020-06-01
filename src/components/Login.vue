@@ -68,7 +68,7 @@ export default {
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: url(../assets/img/login.jpg);
+    background-image: url(https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0233.JPG);
     background-size: 100%;
 }
 .ms-title {
