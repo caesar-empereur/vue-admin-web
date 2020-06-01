@@ -1,8 +1,31 @@
 <template>
     <div>
-        <div class="container" style="height: 100%">
-            <div id="line-box">
-            </div>
+        <!--<div class="container" style="height: 100%">-->
+            <!--<div id="line-box">-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div class="container" align="center">
+            <el-row :gutter="20">
+
+                <el-col :xs="24" :sm="24" :lg="12">
+                    <div id="bar-box" class="chart-wrapper" align="center">
+                    </div>
+                </el-col>
+                <el-col :xs="24" :sm="24" :lg="12">
+                    <div id="line-box" class="chart-wrapper" align="center">
+                    </div>
+                </el-col>
+            </el-row>
+
+            <el-row :gutter="20">
+
+                <el-col :xs="24" :sm="24" :lg="24">
+                    <div id="pie-box" class="chart-wrapper" align="center">
+                    </div>
+                </el-col>
+
+            </el-row>
         </div>
     </div>
 </template>
@@ -10,6 +33,7 @@
 <script>
 
     import echarts from 'echarts'
+    import response from '../assets/json/Echart1.json'
 
     export default {
 
@@ -17,8 +41,7 @@
             return {}
         },
         mounted() {
-            let myChart = echarts.init(document.getElementById('line-box'),'light');
-            let option = {
+            let barOption = {
                 title: {
                     text: '南丁格尔玫瑰图',
                     subtext: '纯属虚构',
@@ -91,17 +114,114 @@
                     }
                 ]
             };
-            myChart.setOption(option);
+
+            let pieOption = {
+                title: {
+                    text: 'NPM Dependencies'
+                },
+                animationDurationUpdate: 1500,
+                animationEasingUpdate: 'quinticInOut',
+                series : [
+                    {
+                        type: 'graph',
+                        layout: 'none',
+                        data: response.nodes.map(function (node) {
+                            return {
+                                x: node.x,
+                                y: node.y,
+                                id: node.id,
+                                name: node.label,
+                                symbolSize: node.size,
+                                itemStyle: {
+                                    color: node.color
+                                }
+                            };
+                        }),
+                        edges: response.edges.map(function (edge) {
+                            return {
+                                source: edge.sourceID,
+                                target: edge.targetID
+                            };
+                        }),
+                        emphasis: {
+                            label: {
+                                position: 'right',
+                                show: true
+                            }
+                        },
+                        roam: true,
+                        focusNodeAdjacency: true,
+                        lineStyle: {
+                            width: 0.5,
+                            curveness: 0.3,
+                            opacity: 0.7
+                        }
+                    }
+                ]
+            };
+            let lineOption = {
+                legend: {},
+                tooltip: {},
+                dataset: {
+                    source: [
+                        ['product', '2012', '2013', '2014', '2015'],
+                        ['Matcha Latte', 41.1, 30.4, 65.1, 53.3],
+                        ['Milk Tea', 86.5, 92.1, 85.7, 83.1],
+                        ['Cheese Cocoa', 24.1, 67.2, 79.5, 86.4]
+                    ]
+                },
+                xAxis: [
+                    {type: 'category', gridIndex: 0},
+                    {type: 'category', gridIndex: 1}
+                ],
+                yAxis: [
+                    {gridIndex: 0},
+                    {gridIndex: 1}
+                ],
+                grid: [
+                    {bottom: '55%'},
+                    {top: '55%'}
+                ],
+                series: [
+                    {type: 'bar', seriesLayoutBy: 'row'},
+                    {type: 'bar', seriesLayoutBy: 'row'},
+                    {type: 'bar', seriesLayoutBy: 'row'},
+                    {type: 'bar', xAxisIndex: 1, yAxisIndex: 1},
+                    {type: 'bar', xAxisIndex: 1, yAxisIndex: 1},
+                    {type: 'bar', xAxisIndex: 1, yAxisIndex: 1},
+                    {type: 'bar', xAxisIndex: 1, yAxisIndex: 1}
+                ]
+            };
+
+            let barChart = echarts.init(document.getElementById('bar-box'),'light');
+            let pieChart = echarts.init(document.getElementById('pie-box'),'light');
+            let lineChart = echarts.init(document.getElementById('line-box'),'light');
+
+
+
+            barChart.setOption(barOption);
+            pieChart.setOption(pieOption);
+            lineChart.setOption(lineOption);
+
+
+            window.addEventListener('resize', function () {
+                barChart.resize();
+                pieChart.resize();
+                lineChart.resize();
+            })
         }
     }
 </script>
 
-<style scoped>
-
-    #line-box {
-        width: 1400px;
-        height: 800px;
-        margin: 0 auto;
-        margin-bottom:0;
+<style rel="stylesheet/scss" lang="scss" scoped>
+    .container {
+        padding: 20px 20px 20px 20px;
+        background-color: rgb(240, 242, 245);
+        .chart-wrapper {
+            width: 100%;
+            height: 380px;
+            background: #fff;
+            margin-bottom: 20px;
+        }
     }
 </style>

@@ -126,7 +126,7 @@ export default {
                     title: '运行管理',
                     subs: [
                         {
-                            index: '/hit-count',
+                            index: '/monitor',
                             title: '网页实时监控'
                         }
                     ]
@@ -143,14 +143,6 @@ export default {
                         {
                             index: '/analysis-user',
                             title: '用户点击分析'
-                        },
-                        {
-                            index: '/analysis-echart1',
-                            title: '用户习惯分析'
-                        },
-                        {
-                            index: '/analysis-echart2',
-                            title: '年度利润分析'
                         }
                     ]
                 }

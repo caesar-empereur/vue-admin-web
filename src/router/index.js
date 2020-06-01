@@ -35,8 +35,8 @@ export default new Router({
                   meta: { title: '商品管理' }
               },
               {
-                  path: '/hit-count',
-                  component: () => import('@/components/HitCount'),
+                  path: '/monitor',
+                  component: () => import('@/components/Monitor'),
                   meta: { title: '网页实时监控' }
               },
               {
@@ -48,16 +48,6 @@ export default new Router({
                   path: '/analysis-user',
                   component: () => import('@/components/UserChart'),
                   meta: { title: '用户点击分析' }
-              },
-              {
-                  path: '/analysis-echart1',
-                  component: () => import('@/components/Echart1'),
-                  meta: { title: '用户习惯分析' }
-              },
-              {
-                  path: '/analysis-echart2',
-                  component: () => import('@/components/Echart2'),
-                  meta: { title: '年度利润分析' }
               }
           ]
       }
