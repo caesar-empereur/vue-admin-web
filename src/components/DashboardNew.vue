@@ -53,7 +53,14 @@
                     'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0237.JPG',
                     'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0260.JPG',
                     'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0289.JPG',
-                    'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0294.JPG'
+                    'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0294.JPG',
+                    'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0304.JPG',
+                    'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0307.JPG',
+                    'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0319.JPG',
+                    'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0325.JPG',
+                    'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0329.JPG',
+                    'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0337.JPG',
+                    'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0348.JPG'
                 ],
                 dialogImageUrl: 'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0395.JPG',
                 dialogVisible: false
@@ -63,8 +70,10 @@
             this.imageList.forEach((item, index, arr) => {
                 let file={};
                 file.url=item;
-                file.name='asdasd'+index;
-                this.fileList.push(file);
+                file.name='asdasd';
+                if (this.fileList && this.fileList.length<=10){
+                    this.fileList.push(file);
+                }
             })
             console.log(this.fileList);
 
