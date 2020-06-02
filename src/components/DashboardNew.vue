@@ -9,20 +9,19 @@
                     <el-upload
                             list-type="picture-card"
                             :disabled="true"
-                            :file-list="fileList">
+                            :file-list="fileList"
+                            style="margin-top: 2%">
                     </el-upload>
-
-
                 </el-col>
             </el-row>
             <el-row :gutter="20">
                 <el-col :xs="24" :sm="24" :lg="24" style="text-align: center">
                     <el-carousel
                             :autoplay="true"
-                            :interval="1000"
+                            :interval="3000"
                             type="card"
-                            height="530px"
-                            style="margin-top: 1%">
+                            height="580px"
+                            style="margin-top: 4%">
                         <el-carousel-item v-for="item in imageList" :key="item">
                             <el-image :src=item></el-image>
                         </el-carousel-item>
@@ -54,11 +53,7 @@
                     'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0237.JPG',
                     'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0260.JPG',
                     'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0289.JPG',
-                    'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0294.JPG',
-                    'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0307.JPG',
-                    'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0337.JPG',
-                    'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0392.JPG',
-                    'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0393.JPG'
+                    'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0294.JPG'
                 ],
                 dialogImageUrl: 'https://vue-image.oss-cn-shenzhen.aliyuncs.com/DSCF0395.JPG',
                 dialogVisible: false
@@ -71,7 +66,7 @@
                 file.name='asdasd'+index;
                 this.fileList.push(file);
             })
-
+            console.log(this.fileList);
 
             window.addEventListener('resize', function () {
 //                barChart.resize();
