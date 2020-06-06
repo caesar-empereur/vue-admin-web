@@ -22,7 +22,7 @@
                     <h2>{{text}}</h2>
                     <el-carousel
                             @change="changeImage"
-                            :autoplay="false"
+                            :autoplay="true"
                             :interval="3000"
                             type="card"
                             height="580px"
