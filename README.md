@@ -13,8 +13,40 @@
     3 本地打包：npm run build:dev
     4 本地访问 https://vue-admin-web.top
 ```
+- nginx http 无域名最简单的配置
+```
+worker_processes  1;
 
-- nginx 的配置
+#pid        logs/nginx.pid;
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    access_log  logs/access.log;
+
+    keepalive_timeout  65;
+
+    server {
+        listen       8080;
+        server_name  localhost;
+
+        location / {
+            root   /home/app/project/vue/vue-admin-web/dist;
+            index  index.html index.htm;
+        }
+    }
+
+}
+
+```
+
+- nginx https 的配置
     ```
     需要在 nginx/conf 目录下增加 vhost 目录存放 vue-admin-web.conf文件
     ```
