@@ -12,6 +12,16 @@
                     <div class="logo">后台管理系统</div>
                     <div class="header-right">
                         <div class="header-user-con">
+                            <el-dropdown>
+                                <el-button type="primary">
+                                    项目地址<i class="el-icon-arrow-down el-icon--right"></i>
+                                </el-button>
+                                <el-dropdown-menu slot="dropdown">
+                                    <el-dropdown-item><el-link type="success" href="https://github.com/caesar-empereur/vue-admin-web">前端项目地址</el-link></el-dropdown-item>
+                                    <el-dropdown-item><el-link type="success" href="https://github.com/caesar-empereur/vue-admin-go">后端项目地址-go版</el-link></el-dropdown-item>
+                                    <el-dropdown-item><el-link type="success" href="https://github.com/caesar-empereur/vue-admin-server">后端项目地址-java版</el-link></el-dropdown-item>
+                                </el-dropdown-menu>
+                            </el-dropdown>
                             <div class="btn-bell">
                                 <el-tooltip
                                         effect="dark"
@@ -32,9 +42,6 @@
                                     <i class="el-icon-caret-bottom"></i>
                                 </span>
                                 <el-dropdown-menu slot="dropdown">
-                                    <!--<a href="https://github.com/lin-xin/vue-manage-system" target="_blank">-->
-                                        <!--<el-dropdown-item>项目仓库</el-dropdown-item>-->
-                                    <!--</a>-->
                                     <el-dropdown-item divided command="loginout">退出登录</el-dropdown-item>
                                 </el-dropdown-menu>
                             </el-dropdown>
