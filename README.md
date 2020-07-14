@@ -1,18 +1,22 @@
 ## vue-admin-web 项目的 web 端
 
-```
-项目运行步骤
 
-1 环境配置
-    1 nginx 的配置
-    2 项目 config 目录下的 dev, test, pro 环境的接口地址配置
-    3 操作系统的 host 文件配置
-2 运行项目
-    1 安装依赖：根目录 npm install 
-    2 本地运行：npm run dev
-    3 本地打包：npm run build:dev
-    4 本地访问 https://vue-admin-web.top
-```
+### 项目运行步骤
+
+- 环境配置
+    - nginx 的配置
+    - 项目 config 目录下的 dev, test, pro 环境的接口地址根据需要配置
+    - 操作系统的 host 文件配置
+- 运行项目
+    - 安装依赖：根目录 npm install 
+    - 本地运行：npm run dev
+    - 本地打包：npm run build:dev
+    - 本地访问 https://vue-admin-web.top
+    
+- 后端项目地址
+    - java 版的 [git@github.com:caesar-empereur/vue-admin-server.git](git@github.com:caesar-empereur/vue-admin-server.git)
+    - go 版的   [git@github.com:caesar-empereur/vue-admin-go.git](git@github.com:caesar-empereur/vue-admin-go.git)
+
 - nginx http 无域名最简单的配置
 ```
 worker_processes  1;
