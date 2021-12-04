@@ -7,5 +7,5 @@ module.exports = {
     NODE_ENV: '"development"',
     EVN_CONFIG: '"dev"',
     API_ROOT: '"https://niceprince.cloud/api"',
-    WS_ROOT: '"wss://niceprince.cloud/wss"'
+    WS_ROOT: '"wss://niceprince.cloud/api/wss"'
 }

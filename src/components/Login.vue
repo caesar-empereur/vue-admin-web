@@ -1,7 +1,7 @@
 <template>
     <div class="login-wrap">
         <div class="ms-login">
-            <div class="ms-title">后台管理系统</div>
+            <div class="ms-title">土耳其旅行</div>
             <el-form :model="param" :rules="rules" ref="login" label-width="0px" class="ms-content">
                 <el-form-item prop="username">
                     <el-input v-model="param.username" placeholder="用户名">
@@ -47,17 +47,20 @@ export default {
     },
     methods: {
         submitForm() {
-            post('/login', this.param)
-                .then((response) => {
-                    console.log(response);
-                    if (response.success){
-                        console.log('设置 token ' + response.token);
-                        setToken(response.token);
-                        this.$router.push('/');
-                    } else {
-                        this.$message.error(response.message);
-                    }
-                })
+            // post('/login', this.param)
+            //     .then((response) => {
+            //         console.log(response);
+            //         if (response.success){
+            //             console.log('设置 token ' + response.token);
+            //             setToken(response.token);
+            //             this.$router.push('/');
+            //         } else {
+            //             this.$message.error(response.message);
+            //         }
+            //     })
+          console.log('设置 token ' + "ERUEI4VTUI4684EYB8Y6845Y84");
+          setToken("ERUEI4VTUI4684EYB8Y6845Y84");
+          this.$router.push('/');
         },
     },
 };

@@ -6,6 +6,6 @@ const prodEnv = require('./prod.env')
 module.exports = {
     NODE_ENV: '"testing"',
     EVN_CONFIG:'"test"',
-    API_ROOT: '"https://vue-admin-server.top"',
-    WS_ROOT: '"wss://constantinopolis.top/wss"'
+    API_ROOT: '"https://niceprince.cloud/api"',
+    WS_ROOT: '"wss://niceprince.cloud/api/wss"'
 }

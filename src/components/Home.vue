@@ -9,7 +9,7 @@
                         <i v-if="!collapse" class="el-icon-s-fold"></i>
                         <i v-else class="el-icon-s-unfold"></i>
                     </div>
-                    <div class="logo">后台管理系统</div>
+                    <div class="logo">土耳其旅行</div>
                     <div class="header-right">
                         <div class="header-user-con">
                             <el-dropdown>
@@ -51,36 +51,7 @@
             </el-header>
 
             <el-container >
-                    <el-menu
-                        :router="true"
-                        :collapse="collapse"
-                        :default-active="this.$route.path"
-                        background-color="#324157"
-                        text-color="#bfcbd9"
-                        router>
-                        <template v-for="item in routeList">
-                            <template v-if="item.subs">
-                                <el-submenu :index="item.index" :key="item.index">
 
-                                    <template slot="title">
-                                        <i :class="item.icon"></i>
-                                        <span slot="title">{{ item.title }}</span>
-                                    </template>
-                                    <template v-for="subItem in item.subs">
-                                        <el-menu-item :index="subItem.index" :key="subItem.index">{{subItem.title }}</el-menu-item>
-                                    </template>
-
-                                </el-submenu>
-                            </template>
-
-                            <template v-else>
-                                <el-menu-item :index="item.index" :key="item.index">
-                                    <i :class="item.icon"></i>
-                                    <span slot="title">{{item.title}}</span>
-                                </el-menu-item>
-                            </template>
-                        </template>
-                    </el-menu>
 
                 <el-container width="80%">
                     <el-main>
@@ -98,7 +69,6 @@
 
 <script>
 
-import BaseCharts from './SellChart.vue'
 import { removeToken } from '../util/auth';
 
 export default {
@@ -111,47 +81,6 @@ export default {
                     icon: 'el-icon-s-home',
                     index: 'dashboard',
                     title: '系统首页'
-                },
-                {
-                    icon: 'el-icon-s-grid',
-                    index: '1',
-                    title: '交易管理',
-                    subs: [
-                        {
-                            index: '/order',
-                            title: '订单管理'
-                        },
-                        {
-                            index: '/sku',
-                            title: '商品管理'
-                        }
-                    ]
-                },
-                {
-                    icon: 'el-icon-setting',
-                    index: '2',
-                    title: '运行管理',
-                    subs: [
-                        {
-                            index: '/monitor',
-                            title: '网页实时监控'
-                        }
-                    ]
-                },
-                {
-                    icon: 'el-icon-cpu',
-                    index: '3',
-                    title: '统计分析',
-                    subs: [
-                        {
-                            index: '/analysis-sell',
-                            title: '商品销售分析'
-                        },
-                        {
-                            index: '/analysis-user',
-                            title: '用户点击分析'
-                        }
-                    ]
                 }
             ],
             fullscreen: false,
