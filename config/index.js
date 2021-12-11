@@ -5,15 +5,15 @@ const path = require('path')
 module.exports = {
   dev: {
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
-    proxyTable: {
-        '/': {
-            target: 'http://localhost:9090',
-            pathRewrite: {
-                '^/': '/'
-            }
-        }
-    },
+    assetsPublicPath: '/turkey/',
+    // proxyTable: {
+    //     '/api': {
+    //         target: 'http://localhost:9090/api',
+    //         pathRewrite: {
+    //             '^/': '/api'
+    //         }
+    //     }
+    // },
 
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8081, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
