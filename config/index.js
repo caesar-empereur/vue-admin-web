@@ -5,12 +5,12 @@ const path = require('path')
 module.exports = {
   dev: {
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: '/manager/',
     proxyTable: {
-        '/': {
-            target: 'http://localhost:9090',
+        '/api': {
+            target: 'http://localhost:9090/api',
             pathRewrite: {
-                '^/': '/'
+                '^/api': '/api'
             }
         }
     },
